@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Portfolio Action{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'action.css' %}" />
+{% endblock %}
+
+{% block body %}
+  <section class="port-action-page-content">
+    <div class="port-action-panel">
+      <article class="port-action-block">
+        <span class="port-action-tag">Portfolio action</span>
+        <h3>Explore my latest case studies</h3>
+        <p>Discover the design systems, responsive builds, and website strategies I used to create high-impact digital experiences for real clients.</p>
+        <a href="{% url 'works' %}" class="port-action-button primary">See the portfolio</a>
+      </article>
+
+      <article class="port-action-block secondary-block">
+        <span class="port-action-tag">Another action</span>
+        <h3>Start a new project</h3>
+        <p>Share your idea and I’ll help you shape it into a polished website or app with fast delivery, clean UX, and strong visual storytelling.</p>
+        <a href="{% url 'contact' %}" class="port-action-button secondary">Let’s begin</a>
+      </article>
+    </div>
+  </section>
+{% endblock %}

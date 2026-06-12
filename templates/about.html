@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  About DeepWeb
+{% endblock %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'style.css' %}" />
+  <style>
+    .about-hero {
+      padding: 80px 24px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      gap: 32px;
+    }
+    .about-hero h1 {
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+    .about-hero p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      max-width: 760px;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .about-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      padding: 28px;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+      min-height: 220px;
+    }
+    .about-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0,212,255,0.24);
+    }
+    .about-card h3 {
+      margin-bottom: 14px;
+      color: #e0f2fe;
+    }
+    .about-card p {
+      color: rgba(255,255,255,0.78);
+      line-height: 1.8;
+    }
+    .about-highlight {
+      margin-top: 32px;
+      padding: 32px;
+      background: rgba(0,212,255,0.08);
+      border: 1px solid rgba(0,212,255,0.16);
+      border-radius: 24px;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.8;
+    }
+    .about-highlight strong {
+      color: #ffffff;
+    }
+  </style>
+{% endblock %}
+{% block body %}
+  <section class="about-hero">
+    <div>
+      <span style="display:inline-block; color:#00d4ff; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; font-size:0.8rem; margin-bottom:1rem;">About DeepWeb</span>
+      <h1>Building premium portfolio experiences for ambitious brands.</h1>
+      <p>DeepWeb is the portfolio studio behind modern websites that blend thoughtful design, fast performance, and compelling storytelling. Every project is crafted to communicate clarity, professionalism, and confidence for businesses that want to stand out online.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>Design Philosophy</h3>
+        <p>We focus on clean visual systems, elegant typography, and intuitive interactions. The goal is to create experiences that feel premium without being overcomplicated.</p>
+      </div>
+      <div class="about-card">
+        <h3>Portfolio Focus</h3>
+        <p>This portfolio showcases projects across ecommerce, branding, web apps, and personal websites. Each case demonstrates how design, structure, and messaging work together to elevate the end result.</p>
+      </div>
+      <div class="about-card">
+        <h3>Technical Approach</h3>
+        <p>Using responsive layouts, modern CSS, and clean HTML, we deliver websites that perform beautifully on desktop and mobile. Every page is built to feel fast, polished, and reliable.</p>
+      </div>
+    </div>
+    <div class="about-highlight">
+      <p><strong>DeepWeb's portfolio is more than a collection of pages — it's a story about how brands present themselves online.</strong> When you explore this portfolio, you should feel the care behind each layout, the consistency of every interaction, and the ambition driving every design choice.</p>
+    </div>
+  </section>
+{% endblock %}

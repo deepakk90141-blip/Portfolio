@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  Contact Me
+{% endblock %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'style.css' %}" />
+{% endblock %}
+{% block body %}
+  <section class="contact-section" style="padding: 40px 20px; max-width: 900px; margin: 0 auto;">
+    <h2 style="font-size: 2.4rem; margin-bottom: 16px;">Contact Me</h2>
+    <p style="font-size: 1rem; line-height: 1.8; margin-bottom: 24px; color: rgba(255,255,255,0.85);">
+      Hello! I am a passionate web developer focused on building clean, responsive, and modern websites. I enjoy crafting user-friendly digital experiences that help brands stand out online. With strong skills in front-end design, responsive layouts, and Django-powered backends, I bring ideas to life with both creativity and technical precision.
+    </p>
+    <div style="display: grid; gap: 24px; margin-bottom: 24px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+      <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 24px;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 12px;">Contact Details</h3>
+        <p style="margin: 0.4rem 0; color: rgba(255,255,255,0.85);"><strong>Name:</strong> deepak kumar maurya</p>
+        <p style="margin: 0.4rem 0; color: rgba(255,255,255,0.85);"><strong>Email:</strong> Deepakk90141@gmail.com</p>
+        <p style="margin: 0.4rem 0; color: rgba(255,255,255,0.85);"><strong>Contact Number:</strong> +91 77529 78340</p>
+        <p style="margin: 0.4rem 0; color: rgba(255,255,255,0.85);"><strong>WhatsApp:</strong> +91 77529 78340</p>
+      </div>
+    </div>
+    <div style="display: grid; gap: 24px;">
+      <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 24px;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 12px;">About Me</h3>
+        <p style="margin-bottom: 0; color: rgba(255,255,255,0.85);">
+          I build websites that look great and work beautifully on every screen. I love turning ideas into polished projects with strong visuals, fast performance, and intuitive user experiences. My goal is to help clients and teams present their work online with confidence.
+        </p>
+      </div>
+      <div style="display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 24px;">
+          <h4 style="margin-bottom: 10px;">Email</h4>
+          <p style="margin: 0; color: rgba(255,255,255,0.85);">deepakk90141@gmail.com</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 24px;">
+          <h4 style="margin-bottom: 10px;">Skills</h4>
+          <p style="margin: 0; color: rgba(255,255,255,0.85);">Django, HTML, CSS, Bootstrap, Responsive Design, JavaScript</p>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

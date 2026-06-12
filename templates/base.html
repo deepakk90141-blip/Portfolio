@@ -1,0 +1,598 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #1c1c1c;
+        color: white;
+        font-family: sans-serif;
+      }
+      /* ===========================
+      PREMIUM DEEPWEB HEADER
+      =========================== */
+
+      .head-hero-section{
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        padding: 15px 25px;
+        background: transparent;
+      }
+
+      .deepweb-navbar{
+        background: rgba(17,17,17,0.85);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 18px;
+        padding: 12px 24px;
+        box-shadow:
+          0 10px 40px rgba(0,0,0,0.45),
+          0 0 30px rgba(0,212,255,0.08);
+        transition: 0.4s ease;
+        position: relative;
+      }
+
+      .deepweb-navbar:hover{
+        border-color: rgba(0,212,255,0.18);
+        box-shadow:
+          0 15px 50px rgba(0,0,0,0.55),
+          0 0 40px rgba(0,212,255,0.12);
+      }
+
+      .navbar-brand{
+        display:flex;
+        align-items:center;
+        text-decoration:none;
+      }
+
+      .logo-box{
+        width:45px;
+        height:45px;
+        min-width:45px;
+        min-height:45px;
+        border-radius:12px;
+        background: linear-gradient(
+          135deg,
+          #00d4ff,
+          #2563eb,
+          #4f46e5
+        );
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        overflow:hidden;
+        color:#fff;
+        font-size:1.1rem;
+        font-weight:900;
+        margin-right:12px;
+        box-shadow:
+          0 0 20px rgba(0,212,255,0.35),
+          0 0 40px rgba(79,70,229,0.25);
+      }
+
+      .logo-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      .brand-name{
+        color:#fff;
+        font-size:1.55rem;
+        font-weight:800;
+        letter-spacing:1px;
+      }
+
+      .brand-name span{
+        color:#00d4ff;
+      }
+
+      .navbar-nav{
+        gap:8px;
+      }
+
+      .navbar-nav .nav-link{
+        color:rgba(255,255,255,0.85)!important;
+        font-weight:600;
+        padding:10px 18px!important;
+        border-radius:12px;
+        transition:all .3s ease;
+        position:relative;
+      }
+
+      .navbar-nav .nav-link:hover,
+      .navbar-nav .dropdown-toggle:hover {
+        color:#fff!important;
+        background:rgba(0,212,255,0.08);
+        transform:translateY(-2px);
+      }
+
+      .navbar-nav .nav-link::after,
+      .navbar-nav .dropdown-toggle::after {
+        content:"";
+        position:absolute;
+        bottom:5px;
+        left:50%;
+        transform:translateX(-50%);
+        width:0;
+        height:2px;
+        background:#00d4ff;
+        transition:.3s;
+      }
+
+      .navbar-nav .nav-link:hover::after,
+      .navbar-nav .dropdown-toggle:hover::after {
+        width:60%;
+      }
+
+      .dropdown-menu {
+        background: rgba(17,17,17,0.95);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 18px;
+        box-shadow: 0 24px 70px rgba(0,0,0,0.25);
+        backdrop-filter: blur(18px);
+        min-width: 220px;
+      }
+
+      .cta-btn{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        padding:12px 28px;
+        border-radius:50px;
+        text-decoration:none!important;
+        font-weight:700;
+        color:white!important;
+        background:linear-gradient(
+          135deg,
+          #00d4ff,
+          #2563eb,
+          #4f46e5
+        );
+        box-shadow:
+          0 10px 30px rgba(0,212,255,0.25);
+        transition:.3s ease;
+      }
+
+      .cta-btn:hover{
+        transform:translateY(-3px);
+        color:white!important;
+        box-shadow:
+          0 15px 40px rgba(0,212,255,0.45);
+      }
+
+      .navbar-text{
+        color:#94a3b8;
+      }
+
+      /* HAMBURGER */
+
+      .navbar-toggler{
+        border:none;
+        outline:none;
+      }
+
+      .navbar-toggler:focus{
+        outline:none;
+        box-shadow:none;
+      }
+
+      .navbar-toggler-icon{
+        background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.9)' stroke-width='2.5' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+      }
+
+      /* MOBILE */
+
+      @media(max-width:991px){
+
+      .head-hero-section{
+          padding:12px;
+      }
+
+      .deepweb-navbar{
+          padding:15px;
+      }
+
+      .navbar-collapse{
+          margin-top:15px;
+      }
+
+      .navbar-nav{
+          gap:4px;
+      }
+
+      .navbar-nav .nav-link{
+          padding:12px 15px!important;
+      }
+
+      .cta-btn{
+          width:100%;
+          margin-top:15px;
+      }
+
+      .brand-name{
+          font-size:1.3rem;
+      }
+
+      .logo-box{
+          width:40px;
+          height:40px;
+      }
+      }
+
+      /* EXTRA PREMIUM GLOW */
+
+      .deepweb-navbar::before{
+        content:"";
+        position:absolute;
+        inset:0;
+        border-radius:18px;
+        padding:1px;
+        background:linear-gradient(
+          90deg,
+          transparent,
+          rgba(0,212,255,.25),
+          transparent
+        );
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite:xor;
+        mask-composite:exclude;
+        pointer-events:none;
+      }
+
+      .footer-shell {
+        width: 100%;
+        padding: 2.5rem;
+        border-radius: 1.75rem;
+        background: #1c1c1c;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 28px 60px rgba(0, 0, 0, 0.25);
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        margin-top: 5px;
+      }
+      
+      .footer-shell:hover {
+        transform: translateY(-2px);
+        border-color: rgba(255, 255, 255, 0.12);
+        box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
+      }
+      
+      .footer-inner {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+      }
+      
+      .footer-brand {
+        display: grid;
+        gap: 1rem;
+      }
+      
+      .footer-brand h1 {
+        margin: 0;
+        font-size: clamp(1.75rem, 2.4vw, 3rem);
+        letter-spacing: -0.04em;
+        color: #7dd3fc;
+      }
+      
+      .footer-brand p {
+        margin: 0;
+        max-width: 420px;
+        line-height: 1.9;
+        color: #cbd5e1;
+      }
+      
+      .footer-links {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+      }
+      
+      .footer-links h2,
+      .footer-contact h2,
+      .footer-subscribe h2 {
+        margin: 0 0 1rem;
+        font-size: 1.05rem;
+        color: #93c5fd;
+      }
+      
+      .footer-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.75rem;
+      }
+      
+      .footer-list li {
+        color: #cbd5e1;
+        font-size: 0.98rem;
+      }
+      
+      .footer-list li a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.25s ease, transform 0.25s ease;
+      }
+      
+      .footer-list li a:hover {
+        color: #7dd3fc;
+        transform: translateX(2px);
+      }
+      
+      .footer-contact,
+      .footer-subscribe {
+        display: grid;
+        gap: 1rem;
+      }
+      
+      .footer-contact p,
+      .footer-subscribe p {
+        margin: 0;
+        color: #cbd5e1;
+        line-height: 1.8;
+      }
+      
+      .contact-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.95rem 1rem;
+        background: rgba(30, 41, 59, 0.95);
+        border: 1px solid rgba(96, 165, 250, 0.16);
+        border-radius: 1rem;
+        color: #e2e8f0;
+        font-size: 0.95rem;
+      }
+      
+      .contact-chip span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background: #1e293b;
+        color: #7dd3fc;
+        font-weight: 700;
+      }
+      
+      .subscribe-input {
+        width: 100%;
+        padding: 1rem 1rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(148, 163, 184, 0.16);
+        background: rgba(15, 23, 42, 0.92);
+        color: #e2e8f0;
+        font-size: 0.98rem;
+      }
+      
+      .subscribe-input:focus {
+        outline: none;
+        border-color: rgba(96, 165, 250, 0.5);
+        box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+      }
+      
+      .subscribe-button {
+        width: fit-content;
+        padding: 0.95rem 1.4rem;
+        border-radius: 999px;
+        border: none;
+        background: linear-gradient(135deg, #38bdf8, #818cf8);
+        color: #0b1222;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      }
+      
+      .subscribe-button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 18px 40px rgba(56, 189, 248, 0.25);
+        filter: brightness(1.05);
+      }
+      
+      .footer-bottom {
+        margin-top: 2.25rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(96, 165, 250, 0.14);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        color: #94a3b8;
+        font-size: 0.95rem;
+      }
+      
+      .footer-badges {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+      
+      .footer-badge {
+        padding: 0.65rem 0.95rem;
+        border-radius: 999px;
+        background: rgba(96, 165, 250, 0.12);
+        color: #cbd5e1;
+        font-size: 0.88rem;
+      }
+      
+      @media (max-width: 960px) {
+        .footer-inner {
+          grid-template-columns: 1fr;
+        }
+      
+        .footer-links {
+          grid-template-columns: 1fr;
+        }
+      }
+      
+      @media (max-width: 600px) {
+        .footer-shell {
+          padding: 1.5rem;
+        }
+      
+        .footer-bottom {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      
+        .subscribe-button {
+          width: 100%;
+        }
+      }
+    </style>
+    {% block css %}
+    {% endblock %}
+
+    <title>
+      {% block title %}
+
+      {% endblock %}
+    </title>
+  </head>
+  <body>
+    <header class="head-hero-section">
+      <nav class="navbar navbar-expand-lg deepweb-navbar">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <div class="logo-box"><img src="{% static 'images/logo.png' %}" alt=""></div>
+
+          <div class="brand-name">
+            Deep<span>Web</span>
+          </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"><span class="navbar-toggler-icon"></span></button>
+
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'works' %}">Projects</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'resume' %}">Resume</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Resources
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="resourcesDropdown">
+                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Explore
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="resourcesDropdown">
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+                <a class="nav-link" href="{% url 'services' %}">Services</a>
+
+              </div>
+            </li>
+          </ul>
+
+          <a href="{% url 'contact' %}" class="cta-btn">Hire Me →</a>
+        </div>
+      </nav>
+    </header>
+
+    {% block body %}
+
+    {% endblock %}
+
+    <!-- Footer (outside body block) -->
+    <footer class="footer-shell">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <h1>Footer Studio</h1>
+          <p>Independent footer design built to look polished on its own. This module is fully self-contained and carries its own layout, colors, and spacing.</p>
+        </div>
+
+        <div class="footer-links">
+          <div>
+            <h2>Explore</h2>
+            <ul class="footer-list">
+              <li>
+                <a href="{% url 'about' %}">About Us</a>
+              </li>
+              <li>
+                <a href="{% url 'services' %}">Services</a>
+              </li>
+              <li>
+                <a href="#">Portfolio</a>
+              </li>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2>Resources</h2>
+            <ul class="footer-list">
+              <li>
+                <a href="#">Support</a>
+              </li>
+              <li>
+                <a href="#">Privacy</a>
+              </li>
+              <li>
+                <a href="#">Terms</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-subscribe">
+          <h2>Stay updated</h2>
+          <p>Subscribe for concise product, design, and launch updates. No clutter, just useful notes.</p>
+          <input class="subscribe-input" type="email" placeholder="Your email address" />
+          <button class="subscribe-button" type="button">Subscribe</button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>©{% now 'Y' %}DeepWeb. All rights reserved.</span>
+        <div class="footer-badges">
+          <span class="footer-badge">Design</span>
+          <span class="footer-badge">Standalone</span>
+          <span class="footer-badge">Responsive</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <script>{% block javascript %}{% endblock javascript %}</script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>

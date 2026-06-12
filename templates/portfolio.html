@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  My Works
+{% endblock %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'style.css' %}" />
+  <style>
+    .works-hero {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .works-hero h2 {
+      font-size: 2.6rem;
+      margin-bottom: 12px;
+    }
+    .works-hero p {
+      color: rgba(255,255,255,0.8);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      padding: 20px;
+      max-width: 1140px;
+      margin: 0 auto 40px;
+    }
+    .work-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 26px;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .work-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .work-card h3 {
+      margin-bottom: 10px;
+    }
+    .work-card p {
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+    }
+    .work-card .work-label {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: #8ab4f8;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .work-card button,
+    .work-card a.view-more-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 16px;
+      border: none;
+      background: #3273dc;
+      color: white;
+      border-radius: 999px;
+      padding: 10px 18px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .work-card button:hover,
+    .work-card a.view-more-button:hover {
+      background: #2554b2;
+    }
+  </style>
+{% endblock %}
+{% block body %}
+  <section class="works-hero">
+    <h2>My Works</h2>
+    <p>Explore a selection of projects that showcase modern layouts, responsive design, performance optimization, and thoughtful user experience. Each project reflects a clean visual style, strong branding, and careful attention to the needs of the end user.</p>
+  </section>
+  <section class="works-grid">
+    <article class="work-card">
+      <span class="work-label">E-commerce</span>
+      <h3>Storefront Redesign</h3>
+      <p>Designed and built a fast, mobile-first storefront with product-focused visuals, easy checkout flow, and smooth interaction on all devices.</p>
+      <a href="{% url 'ecommerce_detail' %}" class="view-more-button">View More</a>
+    </article>
+    <article class="work-card">
+      <span class="work-label">Branding</span>
+      <h3>Creative Agency Website</h3>
+      <p>Created a polished portfolio site for a creative agency with bold typography, clear case studies, and an engaging homepage experience.</p>
+      <a href="{% url 'branding_detail' %}" class="view-more-button">View More</a>
+    </article>
+    <article class="work-card">
+      <span class="work-label">Web App</span>
+      <h3>Dashboard Interface</h3>
+      <p>Built a clean dashboard layout that prioritizes data clarity, quick access to actions, and responsive behavior across desktop and mobile screens.</p>
+      <a href="{% url 'webapp_detail' %}" class="view-more-button">View More</a>
+    </article>
+    <article class="work-card">
+      <span class="work-label">Portfolio</span>
+      <h3>Personal Portfolio</h3>
+      <p>Developed a modern portfolio presentation that highlights projects, skills, and client work with a strong visual rhythm and easy navigation.</p>
+      <a href="{% url 'portfolio_detail' %}" class="view-more-button">View More</a>
+    </article>
+  </section>
+{% endblock %}

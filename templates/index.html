@@ -1,0 +1,836 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  Homepage
+{% endblock %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'style.css' %}" />
+  <link rel="stylesheet" href="{% static 'case_study.css' %}" />
+{% endblock %}
+{% block body %}
+  <div class="main_head">
+    <!-- Main hero section: text and preview image -->
+    <div class="main-section-top">
+      <div class="box-one">
+        <div class="card-body">
+          <h2 class="card-title">Web Design & Development</h2>
+          <h6 class="card-subtitle mb-2 text-muted">C design high-converting websites for e-commerce brands.</h6>
+          <p class="card-text">We create modern, responsive, and user-friendly websites tailored to your business needs. Our focus is on delivering fast, secure, and visually appealing web solutions that help brands grow and succeed online.</p>
+          <a href="{% url 'action' %}" class="card-link">Card action</a>
+        </div>
+      </div>
+      <div class="box-two">
+        <img src="{% static 'images/mobile.png' %}" alt="Portfolio mobile preview" />
+      </div>
+    </div>
+    <hr />
+
+    <!-- Client/project logo marquees: scrolling brand display -->
+    <div class="bottom-marquees">
+      <marquee class="marquee-row marquee-left" behavior="scroll" direction="left" scrollamount="6">
+        <div class="marquee-item">
+          <img src="{% static 'images/apple.png' %}" alt="Apple" />
+          <span>Apple</span>
+        </div>
+
+        <div class="marquee-item">
+          <img src="{% static 'images/google.png' %}" alt="Google" />
+          <span>Google</span>
+        </div>
+
+        <div class="marquee-item">
+          <img src="{% static 'images/microsoft.png' %}" alt="Microsoft" />
+          <span>Microsoft</span>
+        </div>
+
+        <div class="marquee-item">
+          <img src="{% static 'images/amazon.png' %}" alt="Amazon" />
+          <span>Amazon</span>
+        </div>
+
+        <div class="marquee-item">
+          <img src="{% static 'images/netflix.png' %}" alt="Netflix" />
+          <span>Netflix</span>
+        </div>
+
+        <div class="marquee-item">
+          <img src="{% static 'images/adobe.png' %}" alt="Adobe" />
+          <span>Adobe</span>
+        </div>
+      </marquee>
+
+      <marquee class="marquee-row marquee-right" behavior="scroll" direction="right" scrollamount="5">
+        <div class="marquee-item">
+          <img src="{% static 'images/shopify.png' %}" alt="Shopify" />
+          <span>Shopify</span>
+        </div>
+
+        <div class="marquee-item">
+          <img src="{% static 'images/figma.png' %}" alt="Figma" />
+          <span>Figma</span>
+        </div>
+
+        <div class="marquee-item">
+          <img src="{% static 'images/stripe.png' %}" alt="Stripe" />
+          <span>Stripe</span>
+        </div>
+
+        <div class="marquee-item">
+          <img src="{% static 'images/vercel.png' %}" alt="Vercel" />
+          <span>Vercel</span>
+        </div>
+
+        <div class="marquee-item">
+          <img src="{% static 'images/github.png' %}" alt="GitHub" />
+          <span>GitHub</span>
+        </div>
+
+        <div class="marquee-item">
+          <img src="{% static 'images/openai.png' %}" alt="OpenAI" />
+          <span>OpenAI</span>
+        </div>
+      </marquee>
+    </div>
+    <hr />
+
+    <!-- Experiences and project overview -->
+    <section class="stats-overview">
+      <div class="stats-header">
+        <h3>Build experience that stands out</h3>
+        <p>10+ projects completed, over 5 years working, and 50+ builds delivered. Some of these are already live and powering real brands.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stats-card">
+          <span class="stats-value">10+</span>
+          <p>Projects built</p>
+        </div>
+        <div class="stats-card highlight-card">
+          <span class="stats-value">50+</span>
+          <p>Projects delivered</p>
+        </div>
+        <div class="stats-card">
+          <span class="stats-value">5+</span>
+          <p>Years experience</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project case studies section -->
+    <section class="project-cases">
+      <div class="section-header">
+        <h3>Recent work overview</h3>
+        <p>These case cards explain the kind of work I deliver, the category, and the impact made for each project.</p>
+      </div>
+      <div class="case-grid">
+        <article class="case-card">
+          <div class="case-card-top">
+            <span class="case-category">E-commerce</span>
+            <h4>Commerce Cloud</h4>
+          </div>
+          <p>Designed and developed a fast, conversion-first checkout experience with product storytelling, responsive layouts, and simplified navigation.</p>
+          {% comment %} <a href="{% url 'case_study' %}" class="card-link">Card action</a> {% endcomment %}
+          <a href="#" class="card-link open-section" data-target="content1,commerce-cloud-case-study">Read Case Study</a>
+        </article>
+        <article class="case-card">
+          <div class="case-card-top">
+            <span class="case-category">Branding</span>
+            <h4>Brand Launch</h4>
+          </div>
+          <p>Built a modern visual identity and microsite for a new brand, including logo design, color system, and messaging structure.</p>
+          <a href="#" class="card-link open-section" data-target="brand-launch-case-study">Read Case Study</a>
+        </article>
+        <article class="case-card">
+          <div class="case-card-top">
+            <span class="case-category">Front-end</span>
+            <h4>Portfolio Hub</h4>
+          </div>
+          <p>Created an interactive portfolio platform with animated components, smooth scrolling, and clear project storytelling across devices.</p>
+          <a href="#" class="card-link open-section" data-target="portfolio-hub-case-study">Read Case Study</a>
+        </article>
+        <article class="case-card">
+          <div class="case-card-top">
+            <span class="case-category">Web App</span>
+            <h4>SaaS Dashboard</h4>
+          </div>
+          <p>Developed a dashboard interface focusing on analytics, user workflows, and data-driven visuals for faster decision-making.</p>
+          <a href="#" class="card-link open-section" data-target="saas-dashboard-case-study">Read Case Study</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Services and tools section -->
+    <section class="services-skills">
+      <div class="section-header">
+        <h3>Services & skills</h3>
+        <p>I offer a mix of digital services and technical skills to turn ideas into polished, scalable products.</p>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <h4>Web Design</h4>
+          <p>Designing clean, user-friendly websites with strong visual hierarchy and conversion-focused layouts.</p>
+        </div>
+        <div class="service-card">
+          <h4>Branding</h4>
+          <p>Creating identities, style systems, and brand experiences that feel modern and memorable.</p>
+        </div>
+        <div class="service-card">
+          <h4>Front-end Development</h4>
+          <p>Building responsive, fast, and accessible interfaces using HTML, CSS, and JavaScript.</p>
+        </div>
+        <div class="service-card">
+          <h4>Back-end & AI</h4>
+          <p>Implementing server-driven features, intelligent workflows, and AI-enabled experiences with Django and Python.</p>
+        </div>
+        <div class="service-card">
+          <h4>Deployment & Cloud</h4>
+          <p>Launching projects with hosting, cloud services, and performance optimizations for real-world users.</p>
+        </div>
+      </div>
+      <div class="tool-panel">
+        <h4>Tools & technologies</h4>
+        <div class="tool-grid">
+          <div class="tool-card">
+            <strong>Spline</strong>
+            <p>Use for 3D modeling and creating immersive interface visuals.</p>
+          </div>
+          <div class="tool-card">
+            <strong>Bootstrap</strong>
+            <p>Speed up responsive UI development with ready-made layout components.</p>
+          </div>
+          <div class="tool-card">
+            <strong>Cloud</strong>
+            <p>Deploy and scale applications quickly using modern cloud services.</p>
+          </div>
+          <div class="tool-card">
+            <strong>HTML5</strong>
+            <p>Structure modern web pages with semantic, accessible markup.</p>
+          </div>
+          <div class="tool-card">
+            <strong>CSS3</strong>
+            <p>Style layouts with animations, gradients, and responsive design.</p>
+          </div>
+          <div class="tool-card">
+            <strong>JavaScript</strong>
+            <p>Build dynamic interactions and client-side logic for polished apps.</p>
+          </div>
+          <div class="tool-card">
+            <strong>Python</strong>
+            <p>Power backend logic, automation, and data workflows.</p>
+          </div>
+          <div class="tool-card">
+            <strong>Django</strong>
+            <p>Use this framework to create secure, scalable web applications.</p>
+          </div>
+          <div class="tool-card">
+            <strong>AI</strong>
+            <p>Enhance projects with smart features, automation, and insights.</p>
+          </div>
+          <div class="tool-card">
+            <strong>SQL</strong>
+            <p>Query and manage relational data efficiently for apps and dashboards.</p>
+          </div>
+          <div class="tool-card">
+            <strong>DBMS</strong>
+            <p>Design and maintain databases for reliable data storage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client review and contact section -->
+    <section class="client-review">
+      <div class="section-header">
+        <h3>Client reviews & contact</h3>
+        <p>Share your details and message. I’ll get back to discuss your project needs and how we can work together.</p>
+      </div>
+      <div class="review-grid">
+        <div class="review-card">
+          <h4>Client review</h4>
+          <p>“Working with this team transformed our website completely. The new design is clean, fast, and easy for customers to use. From project planning to launch, the process was professional, timely, and very collaborative.”</p>
+          <p>The site now converts better, loads faster, and looks much more premium across all devices.</p>
+          <span class="review-author">- Deepak Kumar Maurya, CEO</span>
+        </div>
+        <form class="review-form" method="post" action="{% url 'index' %}">
+          {% csrf_token %}
+          {% if success_message %}
+            <div class="form-success-message">{{ success_message }}</div>
+          {% endif %}
+          <div class="form-group">
+            <label for="client-name">Name</label>
+            <input type="text" id="client-name" name="name" placeholder="Your name" value="{{ name|default:'' }}" required />
+          </div>
+          <div class="form-group">
+            <label for="client-email">Email</label>
+            <input type="email" id="client-email" name="email" placeholder="you@example.com" value="{{ email|default:'' }}" required />
+          </div>
+          <div class="form-group">
+            <label for="client-contact">Contact</label>
+            <input type="tel" id="client-contact" name="phone" placeholder="+91 98765 43210" value="{{ phone|default:'' }}" required />
+          </div>
+          <div class="form-group">
+            <label for="client-message">Message</label>
+            <textarea id="client-message" name="message" rows="5" placeholder="Describe your project or question..." required>{{ message|default:'' }}</textarea>
+          </div>
+          <button type="submit" class="submit-button">Send message</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <div class="case-study-page-container" style="display: none;">
+    <div class="case-study-content">
+      <!-- Commerce Cloud hero / summary -->
+      <div class="case-study-hero content" id="content1" style="display: none;">
+        <span class="port-action-tag">Case study</span>
+        <h1>Commerce Cloud: A conversion-first e-commerce experience</h1>
+        <p>Commerce Cloud was designed for a fast-growing retail brand that needed a polished, modern storefront and a checkout flow optimized for customer trust and speed. The page tells the story of how we combined brand direction, UX patterns, and technical execution to deliver measurable growth and a scalable digital storefront.</p>
+
+        <div class="case-study-summary">
+          <div class="case-study-summary-card">
+            <strong>Client</strong>
+            <span>A fashion-focused retail brand launching a new digital storefront for premium products.</span>
+          </div>
+          <div class="case-study-summary-card">
+            <strong>Goal</strong>
+            <span>Create a high-converting website with modern product presentation, faster checkout, and improved mobile engagement.</span>
+          </div>
+          <div class="case-study-summary-card">
+            <strong>Outcome</strong>
+            <span>Delivered a polished Commerce Cloud website with smooth interactions, better product storytelling, and strong performance across devices.</span>
+          </div>
+        </div>
+      </div>
+      <!-- Parent container for JS control of separate case studies -->
+      <div class="case-study-wrapper">
+        <!-- Commerce Cloud case study block -->
+        <div id="commerce-cloud-case-study" class="case-study-item commerce-cloud-case-study" style="display: none;">
+          <!-- Commerce Cloud overview section -->
+          <section class="case-study-section">
+            <h2>Project overview</h2>
+            <p>This case study highlights the Commerce Cloud experience from kickoff through launch. The project focused on user-centered design, responsive product layouts, and checkout flows that reduce friction. Every detail was built to support a premium shopping experience that feels modern and trustworthy.</p>
+
+            <div class="case-study-point-list">
+              <li>Brand-led homepage and product display that showcase hero products with bold visuals.</li>
+              <li>Responsive layout patterns that adapt for mobile customers and desktop shoppers alike.</li>
+              <li>Optimized product detail pages with clear messaging, purchase options, and social proof.</li>
+              <li>Streamlined checkout flows designed to reduce abandonment and speed order completion.</li>
+              <li>Performance improvements across image loading, layout shifts, and page responsiveness.</li>
+            </div>
+          </section>
+
+          <section class="case-study-section">
+            <h2>Challenge</h2>
+            <p>The existing Commerce Cloud storefront lacked consistency in product storytelling. The brand needed a cohesive design system to support diverse product categories and to convert new visitors into customers. The biggest challenge was aligning experience, speed, and conversion with a technology stack that required flexibility for future releases.</p>
+
+            <div class="case-study-timeline">
+              <div class="case-study-timeline-item">
+                <strong>Discovery phase</strong>
+                <span>We mapped user journeys, reviewed analytics, and identified conversion drop-offs across the category and checkout pages.</span>
+              </div>
+              <div class="case-study-timeline-item">
+                <strong>Design system</strong>
+                <span>Created a visual language with typography, spacing, and brand elements that work across hero sections, product cards, and calls to action.</span>
+              </div>
+              <div class="case-study-timeline-item">
+                <strong>Mobile-first implementation</strong>
+                <span>Built the interface to prioritize mobile interactions while preserving a premium look on larger screens.</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="case-study-section">
+            <h2>Design solution</h2>
+            <div class="case-study-highlight">
+              <div>
+                <p>The Commerce Cloud design emphasizes product clarity, trust, and fast decision-making. We introduced a clean hero section with expressive product imagery, concise benefit statements, and direct links to featured collections. The product detail template includes sticky purchase actions, simplified variant selection, and persuasive trust messaging.</p>
+              </div>
+              <div class="case-study-highlight-panel">
+                <h3>Key design pillars</h3>
+                <p>1. Build trust through clear messaging and streamlined checkout. 2. Keep navigation simple while giving users access to curated product collections. 3. Use consistent spacing and subtle motion to guide attention without clutter.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="case-study-section">
+            <h2>UX and conversion</h2>
+            <p>Every page element was designed to help customers move forward with confidence. Product cards feature quick highlights, badge labels, and visible price clarity. The checkout experience was reduced to essential fields and progress feedback so users can complete purchases without hesitation.</p>
+
+            <div class="case-study-point-list">
+              <li>Clear category sections for featured, new, and recommended products.</li>
+              <li>Sticky add-to-cart controls in product pages to keep purchase options in view.</li>
+              <li>Checkout status indicators and simplified address input for faster form completion.</li>
+              <li>Trust signals like secure checkout badges and delivery promises added near purchase actions.</li>
+            </div>
+          </section>
+
+          <section class="case-study-section">
+            <h2>Technical implementation</h2>
+            <p>The Commerce Cloud page was built with reusable component patterns and optimized asset loading. Images are served using responsive sizes, and text styles are modular for quick updates. We also made sure the markup remains semantic so the page performs well on search and accessibility standards.</p>
+
+            <div class="case-study-details">
+              <div>
+                <strong>Performance focus</strong>
+                <p>Lazy-loading images and minimizing layout shifts were top priorities to keep the shopping experience smooth.</p>
+              </div>
+              <div>
+                <strong>Modular components</strong>
+                <p>A product card system, hero section, and feature blocks were built to be reused across the homepage and category pages.</p>
+              </div>
+              <div>
+                <strong>Adaptive layouts</strong>
+                <p>The grid system adjusts content order and spacing across desktop, tablet, and mobile views.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="case-study-section">
+            <h2>Results</h2>
+            <p>The Commerce Cloud redesign delivered a stronger product story and a more consistent path to purchase. Early feedback from the client praised the clearer checkout experience and the elevated brand feel. The page was launched with clean analytics tracking so performance improvements can be measured over time.</p>
+
+            <div class="case-study-point-list">
+              <li>Higher add-to-cart interaction from featured product cards.</li>
+              <li>Smoother desktop and mobile page load performance.</li>
+              <li>Improved trust with consistent design and purchase signals.</li>
+              <li>Client-ready platform for future releases and seasonal promotions.</li>
+            </div>
+          </section>
+
+          <section class="case-study-section case-study-quote">
+            <p>"The Commerce Cloud redesign made our catalog feel premium, easy to browse, and faster for customers to buy. It is exactly the modern storefront our brand needed."</p>
+            <strong>— Product Owner, Commerce Cloud launch team</strong>
+          </section>
+
+          <section class="case-study-section">
+            <h2>Key takeaways</h2>
+            <div class="case-study-point-list">
+              <li>A strong Commerce Cloud case study starts with clear business goals and a focused checkout path.</li>
+              <li>Design decisions should support both brand storytelling and purchase confidence.</li>
+              <li>Responsive layouts and fast interactions are essential for modern e-commerce success.</li>
+              <li>Product clarity, trust badges, and optimized checkout fields all contribute to a better conversion funnel.</li>
+              <li>Maintainable component structures make future updates easy and reliable.</li>
+            </div>
+          </section>
+
+          <!-- Commerce Cloud footer / conclusion -->
+          <div class="case-study-footer">
+            <div>
+              <strong>Next step</strong>
+              <span>Ready to use the Commerce Cloud approach for your own product launch? This page shows how a premium e-commerce experience can be built with clarity, speed, and trust.</span>
+            </div>
+            <div>
+              <strong>Contact</strong>
+              <span>Book a consultation, review the work, and take the next step toward a polished online store.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brand Launch case study block -->
+        <div id="brand-launch-case-study" class="case-study-item brand-launch-case-study" style="display: none;">
+          <!-- Brand Launch hero / summary -->
+          <div class="case-study-hero">
+            <span class="port-action-tag">Case study</span>
+            <h1>Brand Launch: Identity, positioning, and campaign activation</h1>
+            <p>The Brand Launch case study documents the end-to-end work for a startup preparing to enter the market with a fresh visual identity, product positioning, and an activation campaign. This project is defined by strategic branding, digital experience design, and launch messaging that builds momentum across the first customer touchpoints.</p>
+
+            <div class="case-study-summary">
+              <div class="case-study-summary-card">
+                <strong>Client</strong>
+                <span>A new lifestyle brand wanting an identity that feels bold, modern, and approachable.</span>
+              </div>
+              <div class="case-study-summary-card">
+                <strong>Goal</strong>
+                <span>Build a distinctive brand launch ecosystem with cohesive visual language, messaging, and landing pages for early adopters.</span>
+              </div>
+              <div class="case-study-summary-card">
+                <strong>Launch</strong>
+                <span>Position the brand for market entry with a high-energy digital narrative, product exploration, and a seamless lead capture flow.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Brand Launch overview section -->
+          <section class="case-study-section">
+            <h2>Brand Launch overview</h2>
+            <p>From foundation to launch, the Brand Launch case study focuses on creating an identity system that scales across digital products and marketing touchpoints. The work combines story, structure, and creative direction so the brand stands out from the start and feels ready for both early customers and long-term growth.</p>
+
+            <div class="case-study-point-list">
+              <li>Developed a visual system with color, typography, and iconography that reflects the brand personality.</li>
+              <li>Crafted messaging guidelines that make the brand sound confident, clear, and memorable.</li>
+              <li>Designed a launch landing page with focused conversion flows and a strong first impression.</li>
+              <li>Built reusable design patterns for product preview, feature storytelling, and social proof.</li>
+              <li>Established a scalable content structure for product, community, and campaign pages.</li>
+            </div>
+          </section>
+
+          <section class="case-study-section">
+            <h2>Branding challenges</h2>
+            <p>The brand needed to distinguish itself quickly in a crowded category without relying on tired visual tropes. We had to balance a bold new identity with usability—ensuring product messaging was immediately clear while still feeling aspirational. The launch experience also needed to support both desktop discovery and mobile-first browsing.</p>
+
+            <div class="case-study-timeline">
+              <div class="case-study-timeline-item">
+                <strong>Positioning workshop</strong>
+                <span>We started with audience research and competitive analysis to define the brand’s core promise and launch story.</span>
+              </div>
+              <div class="case-study-timeline-item">
+                <strong>Visual direction</strong>
+                <span>Explored concepts for mood, color, and tone to shape a brand that feels modern and emotionally resonant.</span>
+              </div>
+              <div class="case-study-timeline-item">
+                <strong>Launch experience</strong>
+                <span>Designed a homepage and lead capture page that convert curiosity into early sign-ups and meaningful interest.</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="case-study-section">
+            <h2>Design solution</h2>
+            <div class="case-study-highlight">
+              <div>
+                <p>The Brand Launch solution combines bold typography, expressive photography, and clean interaction patterns. Every screen was designed to guide users through the brand story with clear hierarchy, strong visuals, and intuitive navigation. The homepage leads with a concise value proposition, followed by product benefits, testimonials, and a signup call-to-action.</p>
+              </div>
+              <div class="case-study-highlight-panel">
+                <h3>Launch design pillars</h3>
+                <p>1. Create a bold first impression with strong contrast and striking layout rhythm. 2. Keep messaging concise and benefit-driven to help visitors quickly understand the brand value. 3. Maintain design consistency across launch hero, feature blocks, and social proof sections.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="case-study-section">
+            <h2>Launch messaging and campaign</h2>
+            <p>Messaging frames the brand as a fresh alternative with a direct, friendly tone. Campaign language was built around clarity, confidence, and community to help visitors feel both excited and safe. The launch experience encourages visitors to join the waitlist, explore key features, and learn what makes the brand different.</p>
+
+            <div class="case-study-point-list">
+              <li>Created headline and subheadline language that quickly communicates the primary brand promise.</li>
+              <li>Developed benefit-driven blurbs for product features, each reinforcing a key reason to engage.</li>
+              <li>Used soft social proof and early adopter testimonials to build credibility without overwhelming the page.</li>
+              <li>Included clear CTAs for signup, community join, and product exploration.</li>
+            </div>
+          </section>
+
+          <section class="case-study-section">
+            <h2>Technical execution</h2>
+            <p>The launch site was built using modular components and a fast, responsive grid. We optimized interactions for touch and keyboard, and ensured the page loads quickly on both mobile and desktop. The visual system includes accessible color contrast, readable text scales, and consistent spacing rules.</p>
+
+            <div class="case-study-details">
+              <div>
+                <strong>Component system</strong>
+                <p>Reusable sections were created for hero content, product features, testimonials, and calls to action.</p>
+              </div>
+              <div>
+                <strong>Responsive behavior</strong>
+                <p>The layout rearranges elegantly on smaller screens while preserving strong visual hierarchy.</p>
+              </div>
+              <div>
+                <strong>Performance</strong>
+                <p>Images were optimized, animations were kept lightweight, and CSS rules were structured for maintainability.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="case-study-section">
+            <h2>Launch results</h2>
+            <p>The Brand Launch site created a memorable first impression and quickly guided visitors toward the signup flow. Early user feedback called out the confident branding, the clear value story, and the easy-to-follow product narrative. The launch site successfully positioned the brand as modern, approachable, and ready for growth.</p>
+
+            <div class="case-study-point-list">
+              <li>Stronger brand recognition with a distinct visual identity and consistent messaging.</li>
+              <li>Improved visitor engagement through clear directional cues and concise copy.</li>
+              <li>Positive early feedback from stakeholders about the tone and launch experience.</li>
+              <li>Preserved flexibility for future campaign updates and new product introductions.</li>
+            </div>
+          </section>
+
+          <section class="case-study-section case-study-quote">
+            <p>"The Brand Launch experience captured our personality perfectly and delivered a launch page that feels modern, exciting, and easy to navigate. It gave our product the confidence it needed from day one."</p>
+            <strong>— Head of Marketing, Brand Launch project</strong>
+          </section>
+
+          <section class="case-study-section">
+            <h2>Brand Launch takeaways</h2>
+            <div class="case-study-point-list">
+              <li>Start brand launches with a sharp positioning statement and an eye-catching visual system.</li>
+              <li>Use a clear conversion flow to guide visitors from story to signup.</li>
+              <li>Design launch pages with flexible, reusable sections so future updates are easy.</li>
+              <li>Keep messaging consistent across hero, product, and campaign sections.</li>
+              <li>Align the visual identity with the launch tone to build confidence and memorability.</li>
+            </div>
+          </section>
+
+          <div class="case-study-footer">
+            <div>
+              <strong>Launch-ready brand</strong>
+              <span>This Brand Launch case study shows how creative direction, product storytelling, and launch strategy combine to create a memorable first impression.</span>
+            </div>
+            <div>
+              <strong>Talk to us</strong>
+              <span>Let’s build a launch experience that reflects your vision and turns early interest into action.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Hub case study block -->
+        <div id="portfolio-hub-case-study" class="case-study-item portfolio-hub-case-study" style="display: none;">
+          <!-- Portfolio Hub hero / summary -->
+          <div class="case-study-hero">
+            <span class="port-action-tag">Case study</span>
+            <h1>Portfolio Hub: A centralized showcase for creative teams</h1>
+            <p>Portfolio Hub brings together work, storytelling, and contact moments in one seamless experience. The platform is designed for agencies and freelancers who want to present their best work clearly while making it easy for prospects to explore services and start a conversation.</p>
+
+            <div class="case-study-summary">
+              <div class="case-study-summary-card">
+                <strong>Focus</strong>
+                <span>Showcase projects, processes, and outcomes in a polished, navigable portfolio interface.</span>
+              </div>
+              <div class="case-study-summary-card">
+                <strong>Audience</strong>
+                <span>Designers, agencies, and creative founders who need a professional, flexible showcase system.</span>
+              </div>
+              <div class="case-study-summary-card">
+                <strong>Outcome</strong>
+                <span>Built a hub that feels curated, easy to scan, and fast to update with new work and stories.</span>
+              </div>
+            </div>
+          </div>
+
+          <section class="case-study-section">
+            <h2>Project overview</h2>
+            <p>Portfolio Hub was created to turn a creative portfolio into a compelling digital story. The goal was to simplify navigation, improve project discovery, and deliver an experience that reflects the quality of the work itself.</p>
+
+            <div class="case-study-point-list">
+              <li>Centralized portfolio structure for featured case studies, services, and client outcomes.</li>
+              <li>Flexible project cards that adapt to photography, motion, and rich content formats.</li>
+              <li>Clear call-to-action paths for prospect inquiries, proposals, and discovery conversations.</li>
+            </div>
+          </section>
+
+          <section class="case-study-section">
+            <h2>Problem</h2>
+            <p>The previous portfolio experience was fragmented and hard for visitors to navigate. Potential clients struggled to understand service offerings quickly, and the brand story needed stronger visual continuity across case studies.</p>
+
+            <div class="case-study-timeline">
+              <div class="case-study-timeline-item">
+                <strong>Discovery</strong>
+                <span>Mapped visitor flows and identified the pages where users dropped off before reaching contact or project details.</span>
+              </div>
+              <div class="case-study-timeline-item">
+                <strong>Structure</strong>
+                <span>Found the portfolio needed an accessible hub with clear categories, visual previews, and project teasers.</span>
+              </div>
+              <div class="case-study-timeline-item">
+                <strong>Messaging</strong>
+                <span>Needed a stronger narrative for the brand’s approach, process, and value proposition.</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="case-study-section">
+            <h2>Design solution</h2>
+            <div class="case-study-highlight">
+              <div>
+                <p>The Portfolio Hub design balances visual flair with clear structure. Featured work is front and center, supported by a simple navigation system and contextual project summaries that help visitors find relevant examples quickly.</p>
+              </div>
+              <div class="case-study-highlight-panel">
+                <h3>Hub design principles</h3>
+                <p>1. Keep the entry experience clean and inviting. 2. Use strong visual hierarchy to guide visitors from overview to work details. 3. Make every project feel like a story, not just a gallery item.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="case-study-section">
+            <h2>Feature highlights</h2>
+            <p>Portfolio Hub includes interactive project previews, quick service summaries, and a contact CTA that stays visible across scroll. Every detail is designed to make it easy for prospects to understand capabilities and action the next step.</p>
+
+            <div class="case-study-point-list">
+              <li>Project cards with brief outcomes, role descriptions, and direct links to full case studies.</li>
+              <li>A modular overview section for services, processes, and standout metrics.</li>
+              <li>A contact panel that reinforces trust and encourages inquiry through clear benefits.</li>
+            </div>
+          </section>
+
+          <section class="case-study-section">
+            <h2>Results</h2>
+            <p>Portfolio Hub helped the brand present its work in a more compelling, organized way. Prospects can now discover relevant examples faster, and the client has a flexible platform for adding new case studies, campaigns, and strategic updates.</p>
+
+            <div class="case-study-point-list">
+              <li>Improved portfolio navigation and faster project discovery.</li>
+              <li>Higher engagement on case study pages and more contact form submissions.</li>
+              <li>Stronger visual brand consistency across project entries and service messaging.</li>
+            </div>
+          </section>
+
+          <section class="case-study-section case-study-quote">
+            <p>“Portfolio Hub turned our body of work into an easy-to-explore story. Clients now understand our process and value before they even reach out.”</p>
+            <strong>— Creative Director, Portfolio Hub launch</strong>
+          </section>
+
+          <section class="case-study-section">
+            <h2>Portfolio Hub takeaways</h2>
+            <div class="case-study-point-list">
+              <li>Make your portfolio feel like a destination, not just a list of projects.</li>
+              <li>Use visual hierarchy to highlight your strongest work first.</li>
+              <li>Keep calls to action available so visitors can move from discovery to contact easily.</li>
+              <li>Design for both project storytelling and practical lead generation.</li>
+              <li>Build a flexible hub structure that supports future work and seasonal updates.</li>
+            </div>
+          </section>
+
+          <div class="case-study-footer">
+            <div>
+              <strong>Portfolio-ready showcase</strong>
+              <span>Portfolio Hub shows how a thoughtful design system can elevate creative work and help teams win the right clients.</span>
+            </div>
+            <div>
+              <strong>Start your hub</strong>
+              <span>Let’s build a portfolio experience that makes every project feel curated, memorable, and easy to explore.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SaaS Dashboard case study block -->
+        <div id="saas-dashboard-case-study" class="case-study-item saas-dashboard-case-study" style="display: none;">
+          <!-- SaaS Dashboard hero / summary -->
+          <div class="case-study-hero">
+            <span class="port-action-tag">Case study</span>
+            <h1>SaaS Dashboard: Metrics-driven product analytics for modern teams</h1>
+            <p>This SaaS Dashboard case study showcases a product analytics experience built for growth teams, customer success, and founders. The dashboard was designed to make complex data feel accessible, actionable, and visually coherent at a glance.</p>
+
+            <div class="case-study-summary">
+              <div class="case-study-summary-card">
+                <strong>Client</strong>
+                <span>A growing SaaS business needing a data-first dashboard for product adoption and performance tracking.</span>
+              </div>
+              <div class="case-study-summary-card">
+                <strong>Goal</strong>
+                <span>Build an analytics interface that surfaces real-time metrics, trends, and conversion signals clearly.</span>
+              </div>
+              <div class="case-study-summary-card">
+                <strong>Result</strong>
+                <span>Delivered a dashboard that helps teams identify opportunities faster and communicate performance with confidence.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SaaS Dashboard overview section -->
+          <section class="case-study-section">
+            <h2>Project overview</h2>
+            <p>The dashboard was created to support a cross-functional SaaS team that needed a single source of truth for activation, retention, and growth metrics. It combines a clean visual system with flexible data panels so users can customize their view and focus on the insights that matter most.</p>
+
+            <div class="case-study-point-list">
+              <li>Centralized analytics for product usage, revenue, and customer health.</li>
+              <li>Dashboard modules that update in real time and keep teams aligned.</li>
+              <li>A design system built for data clarity, with consistent spacing, contrast, and hierarchy.</li>
+            </div>
+          </section>
+
+          <!-- SaaS Dashboard challenge section -->
+          <section class="case-study-section">
+            <h2>Challenge</h2>
+            <p>The existing reporting experience was scattered across spreadsheets and legacy tools. Users struggled to discover insights quickly, and the dashboard needed to support both executives and operations teams without overwhelming either audience.</p>
+
+            <div class="case-study-timeline">
+              <div class="case-study-timeline-item">
+                <strong>Research</strong>
+                <span>Interviewed stakeholders to understand the most important metrics and how they make decisions.</span>
+              </div>
+              <div class="case-study-timeline-item">
+                <strong>Alignment</strong>
+                <span>Defined the core dashboard personas: growth leads, customer success managers, and product owners.</span>
+              </div>
+              <div class="case-study-timeline-item">
+                <strong>Clarity</strong>
+                <span>Focused on reducing cognitive load by grouping related metrics and using clear visual language.</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- SaaS Dashboard design solution section -->
+          <section class="case-study-section">
+            <h2>Design solution</h2>
+            <div class="case-study-highlight">
+              <div>
+                <p>The dashboard is structured around three main zones: summary KPIs, trend overviews, and action-focused insights. Each component is designed to be scannable, with bold titles, intuitive charts, and compact data cards that communicate status at a glance.</p>
+              </div>
+              <div class="case-study-highlight-panel">
+                <h3>Core design principles</h3>
+                <p>1. Use contrast and color sparingly to highlight critical changes. 2. Keep interactions lightweight and easy to understand. 3. Make complex metrics feel immediate without clutter.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- SaaS Dashboard features section -->
+          <section class="case-study-section">
+            <h2>Feature highlights</h2>
+            <p>The dashboard includes an activity summary, cohort performance, revenue forecast, and customer health cards. Each feature is built to help teams move from insight to action through clear labels, trend indicators, and contextual annotations.</p>
+
+            <div class="case-study-point-list">
+              <li>Live KPI cards for MRR, churn, trial conversion, and active users.</li>
+              <li>Trend charts with baseline comparisons and growth targets.</li>
+              <li>Customizable insight panels that can be reordered and filtered by team.</li>
+            </div>
+          </section>
+
+          <!-- SaaS Dashboard data strategy section -->
+          <section class="case-study-section">
+            <h2>Data and strategy</h2>
+            <p>We built the dashboard to support both daily monitoring and quarterly planning. It includes measures for acquisition, engagement, retention, and expansion so teams can connect the product experience to business outcomes.</p>
+
+            <div class="case-study-details">
+              <div>
+                <strong>Acquisition</strong>
+                <p>Track signups, trial starts, and source performance with clear channel breakdowns.</p>
+              </div>
+              <div>
+                <strong>Engagement</strong>
+                <p>Monitor active usage, feature adoption, and session behavior across customer segments.</p>
+              </div>
+              <div>
+                <strong>Retention</strong>
+                <p>Highlight churn risks, renewal-ready accounts, and cohort retention trends.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- SaaS Dashboard results section -->
+          <section class="case-study-section">
+            <h2>Results</h2>
+            <p>After launch, the SaaS dashboard helped the team reduce reporting time and align around prioritized growth opportunities. Stakeholders gained confidence in the data and the product roadmap, while customer success teams used the dashboard to proactively manage risk.</p>
+
+            <div class="case-study-point-list">
+              <li>Faster decision-making from more visible product and revenue metrics.</li>
+              <li>Improved cross-team alignment around retention and expansion goals.</li>
+              <li>Better access to performance trends that support strategic planning.</li>
+            </div>
+          </section>
+
+          <!-- SaaS Dashboard quote section -->
+          <section class="case-study-section case-study-quote">
+            <p>“The new dashboard gave our team real confidence. We can now spot the right growth signals quickly and act before issues become problems.”</p>
+            <strong>— VP of Growth, SaaS Dashboard project</strong>
+          </section>
+
+          <!-- SaaS Dashboard takeaway section -->
+          <section class="case-study-section">
+            <h2>SaaS Dashboard takeaways</h2>
+            <div class="case-study-point-list">
+              <li>Build dashboards with audience clarity: one view should be useful to its intended user.</li>
+              <li>Prioritize the most meaningful metrics and keep the interface focused.</li>
+              <li>Use visual emphasis to show change, not just raw numbers.</li>
+              <li>Design for both immediate monitoring and longer-term strategy.</li>
+              <li>Make the dashboard easy to update as product and business priorities evolve.</li>
+            </div>
+          </section>
+
+          <div class="case-study-footer">
+            <div>
+              <strong>Data-driven growth</strong>
+              <span>This SaaS Dashboard case study shows how strong product analytics design can turn data into decision-ready insight.</span>
+            </div>
+            <div>
+              <strong>See your metrics</strong>
+              <span>Build a dashboard that helps your team move from signal to action with speed and clarity.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

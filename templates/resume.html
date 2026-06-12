@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  Resume
+{% endblock %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'style.css' %}" />
+  <style>
+    .resume-page {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      color: #ededed;
+    }
+    .resume-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+      margin-bottom: 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      padding-bottom: 20px;
+    }
+    .resume-title {
+      font-size: 2.6rem;
+      margin-bottom: 8px;
+    }
+    .resume-subtitle {
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+      max-width: 680px;
+      line-height: 1.8;
+    }
+    .resume-contact {
+      min-width: 240px;
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+    }
+    .resume-contact h4,
+    .resume-section h3 {
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .resume-contact p,
+    .resume-section p,
+    .resume-section li {
+      color: rgba(255,255,255,0.78);
+      line-height: 1.8;
+    }
+    .resume-section {
+      margin-bottom: 28px;
+    }
+    .resume-section-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 28px;
+    }
+    .resume-card {
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 26px;
+      background: rgba(255,255,255,0.03);
+    }
+    .resume-card + .resume-card {
+      margin-top: 16px;
+    }
+    .resume-card h4 {
+      margin-bottom: 10px;
+    }
+    .resume-card span {
+      display: inline-block;
+      color: rgba(255,255,255,0.72);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+    .resume-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .resume-list li {
+      margin-bottom: 16px;
+    }
+    .resume-list li:last-child {
+      margin-bottom: 0;
+    }
+    .resume-pill {
+      display: inline-flex;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.78);
+      margin: 0 8px 8px 0;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 880px) {
+      .resume-section-grid {
+        grid-template-columns: 1fr;
+      }
+      .resume-header {
+        flex-direction: column;
+      }
+      .resume-contact {
+        width: 100%;
+      }
+    }
+  </style>
+{% endblock %}
+{% block body %}
+  <section class="resume-page">
+    <div class="resume-header">
+      <div>
+        <h1 class="resume-title">Deepak kumar maurya</h1>
+        <p class="resume-subtitle">Experienced web developer with a focus on building responsive, high-performing websites and interactive digital experiences using Django, HTML, CSS, and JavaScript.</p>
+      </div>
+      <aside class="resume-contact">
+        <h4>Contact</h4>
+        <p><strong>Email:</strong> deepakk90141@gmail.com</p>
+        <p><strong>Phone:</strong> +91 77529 78340</p>
+        <p><strong>WhatsApp:</strong> +91 77529 78340</p>
+        <p><strong>Location:</strong> Bahadurapur Sirsia, Balrampur, India</p>
+      </aside>
+    </div>
+
+    <div class="resume-section-grid">
+      <div>
+        <section class="resume-section resume-card">
+          <h3>Professional Summary</h3>
+          <p>A dedicated developer who creates polished websites with a strong visual design foundation, smooth user experience, and reliable backend support. I enjoy working on projects that combine creative design with clean, maintainable code.</p>
+        </section>
+
+        <section class="resume-section resume-card">
+          <h3>Experience</h3>
+          <div>
+            <h4>Front-end Developer</h4>
+            <span>Freelance / Self-employed — 2023 to Present</span>
+            <p>Build responsive landing pages, portfolio websites, and web applications using HTML, CSS, Bootstrap, and JavaScript. Collaborate with clients to polish designs and improve website performance.</p>
+          </div>
+          <div>
+            <h4>Web Developer Intern</h4>
+            <span>Agency Name — 2022 to 2023</span>
+            <p>Assisted in creating client websites, maintained CMS content, and optimized layouts for mobile-first use. Gained hands-on experience with Django templates, static assets, and responsive grid systems.</p>
+          </div>
+        </section>
+
+        <section class="resume-section resume-card">
+          <h3>Education</h3>
+          <div>
+            <h4>Bachelor of Computer Science</h4>
+            <span>University Name — 2024 to 2027</span>
+            <p>Focused on web development principles, programming, database design, and software engineering fundamentals.</p>
+          </div>
+        </section>
+      </div>
+
+      <aside>
+        <section class="resume-section resume-card">
+          <h3>Skills</h3>
+          <div>
+            <span class="resume-pill">Django</span>
+            <span class="resume-pill">HTML5</span>
+            <span class="resume-pill">CSS3</span>
+            <span class="resume-pill">Bootstrap</span>
+            <span class="resume-pill">JavaScript</span>
+            <span class="resume-pill">Responsive Design</span>
+            <span class="resume-pill">UI/UX</span>
+            <span class="resume-pill">Git</span>
+          </div>
+        </section>
+
+        <section class="resume-section resume-card">
+          <h3>Tools</h3>
+          <ul class="resume-list">
+            <li>VS Code</li>
+            <li>GitHub</li>
+            <li>Figma</li>
+            <li>Chrome DevTools</li>
+            <li>Bootstrap</li>
+          </ul>
+        </section>
+
+        <section class="resume-section resume-card">
+          <h3>Highlights</h3>
+          <ul class="resume-list">
+            <li>Responsive websites that adapt seamlessly on mobile and desktop.</li>
+            <li>Fast-loading pages with polished visual presentation.</li>
+            <li>Strong attention to layout and typography.</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+  </section>
+{% endblock %}
